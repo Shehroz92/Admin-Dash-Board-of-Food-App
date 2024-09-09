@@ -6,4 +6,5 @@
     <color name="start_colour">#53E88B</color>
     <color name="end_colour">#15BE77</color>
     <color name="icon_colour">#FEAD1D</color>
+    <color name="green_card">#FFF1DB</color>
 </resources>
