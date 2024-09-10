@@ -12,7 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding =  ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.addMenu.setOnClickListener {
+
+        binding.addMenuConstraint.setOnClickListener {
             val intent = Intent(this@MainActivity,AddItemActivity::class.java)
             startActivity(intent)
             finish()
