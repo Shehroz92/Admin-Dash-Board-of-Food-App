@@ -1,5 +1,6 @@
 package eu.practice.admindashboardoffoodapp.activities.activity.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.PickVisualMediaRequest
@@ -20,7 +21,8 @@ class AddItemActivity : AppCompatActivity() {
         }
 
         binding.backButton.setOnClickListener {
-            finish()
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
         }
 
     }

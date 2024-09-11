@@ -214,7 +214,7 @@
                android:layout_width="24sp"
                android:layout_height="24sp"
                android:layout_marginTop="12sp"
-               android:src="@drawable/baseline_add_24"
+               android:src="@drawable/plus"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toTopOf="parent" />
@@ -253,6 +253,7 @@
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/allMenuShow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/green_card"
@@ -300,6 +301,7 @@
         app:layout_constraintTop_toBottomOf="@id/addMenu" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/showProfile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/green_card"
@@ -347,6 +349,7 @@
         app:layout_constraintTop_toBottomOf="@id/AllItemMenu" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/newUserCreate"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/green_card"
@@ -393,6 +396,7 @@
         app:layout_constraintTop_toBottomOf="@id/CreateNewUser" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/logOUtButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/green_card"
@@ -441,6 +445,7 @@
         app:layout_constraintTop_toBottomOf="@id/profile" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/OrderDispatch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/green_card"
