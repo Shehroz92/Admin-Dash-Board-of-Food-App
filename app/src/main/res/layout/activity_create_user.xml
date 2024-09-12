@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.activity.activity.CreateUserActivity">
+
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="24sp"
+        android:layout_height="24sp"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="16sp"
+        android:layout_marginStart="8sp"
+        />
+
+    <ImageView
+        android:id="@+id/logoLogin"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/logo_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/App_Name"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="@+id/logoLogin"
+        app:layout_constraintStart_toStartOf="@+id/logoLogin"
+        app:layout_constraintTop_toBottomOf="@+id/logoLogin" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="Create New User Admin"
+        android:textAlignment="center"
+        android:textColor="@color/text_colour"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="325sp"
+        android:layout_height="57sp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/baseline_person_outline_24"
+        android:drawablePadding="15sp"
+        android:elevation="5sp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="5sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress2"
+        android:layout_width="325sp"
+        android:layout_height="57sp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="15sp"
+        android:elevation="5sp"
+        android:ems="10"
+        android:hint="Email or Phone nummber"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="5sp"
+        android:layout_marginTop="24sp"
+        app:layout_constraintTop_toBottomOf="@id/Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="437dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="325sp"
+        android:layout_height="57sp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittextshape"
+        android:drawableLeft="@drawable/baseline_lock_24"
+        android:drawablePadding="15sp"
+        android:elevation="5sp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="5sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnogin"
+        android:layout_width="200sp"
+        android:layout_height="57sp"
+        android:background="@drawable/green_button"
+        android:fontFamily="@font/lato_bold"
+        android:padding="5sp"
+        android:layout_marginTop="46sp"
+        android:text="Create New User"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+       app:layout_constraintTop_toBottomOf="@id/editTextTextPassword2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_goneMarginTop="16sp" />
+
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="47sp"
+        android:fontFamily="@font/lato_regular"
+        android:text="Design By\nAndroid"
+        android:textAlignment="center"
+        android:textColor="@color/text_colour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

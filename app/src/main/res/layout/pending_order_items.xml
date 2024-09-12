@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <androidx.cardview.widget.CardView
+        android:elevation="7sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8sp"
+        android:layout_marginBottom="8sp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/screen_background_light_transparent">
+
+            <ImageView
+                android:id="@+id/cartimage"
+                android:layout_width="75sp"
+                android:layout_height="75sp"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/edittextshape"
+                android:layout_marginStart="16sp"
+                android:src="@drawable/logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cartfoodname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name Customer"
+                android:textColor="@color/black"
+                android:layout_marginStart="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/cartItemprice"
+                app:layout_constraintStart_toEndOf="@+id/cartimage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cartItemprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:layout_marginStart="16sp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cartimage"
+                app:layout_constraintTop_toBottomOf="@+id/cartfoodname" />
+
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="5"
+                android:fontFamily="@font/lato_bold"
+                android:textSize="20sp"
+                android:textColor="@color/text_colour"
+                app:layout_constraintBottom_toBottomOf="@+id/cartItemprice"
+                app:layout_constraintStart_toEndOf="@+id/cartItemprice"
+                app:layout_constraintTop_toTopOf="@+id/cartItemprice" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dispatch"
+                android:layout_width="wrap_content"
+                android:layout_height="37sp"
+                android:textAllCaps="false"
+                android:layout_marginEnd="16dp"
+                android:text="Dispatach"
+                android:background="@drawable/green_button"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/cartItemprice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cartfoodname" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

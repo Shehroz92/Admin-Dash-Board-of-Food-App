@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.activity.activity.OutForDeliveryActivity">
-
+    android:background="@color/white"
+    tools:context=".activities.activity.activity.PendingOrderActivity">
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="24sp"
@@ -22,17 +22,16 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Out For Delivery"
+        android:text="Pending Orders"
         android:textColor="@color/black"
         android:textSize="40sp"
-        android:fontFamily="@font/lato_regular"
+        android:fontFamily="@font/lato_bolditalic"
         app:layout_constraintTop_toBottomOf="@id/backButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/DeliveryRecyclerView"
+        android:id="@+id/PendingRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16sp"
@@ -43,5 +42,8 @@
         tools:listitem="@layout/pending_order_items"
 
         />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

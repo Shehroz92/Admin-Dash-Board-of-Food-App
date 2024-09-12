@@ -13,6 +13,13 @@ class MainActivity : AppCompatActivity() {
         binding =  ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        binding.textView8.setOnClickListener {
+            val intent = Intent(this@MainActivity,PendingOrderActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         binding.addMenuConstraint.setOnClickListener {
             val intent = Intent(this@MainActivity,AddItemActivity::class.java)
             startActivity(intent)
@@ -25,23 +32,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.showProfile.setOnClickListener {
-            Toast.makeText(this,"Show Profile is click ",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@MainActivity , AdminProfileActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         binding.newUserCreate.setOnClickListener {
-            Toast.makeText(this,"New Create User is click ",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@MainActivity , CreateUserActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         binding.OrderDispatch.setOnClickListener {
             val intent = Intent(this , OutForDeliveryActivity::class.java)
             startActivity(intent)
             finish()
-            Toast.makeText(this,"Order Dispatch is click ",Toast.LENGTH_SHORT).show()
+
         }
 
-        binding.showProfile.setOnClickListener {
-            Toast.makeText(this,"Order Dispatch is click ",Toast.LENGTH_SHORT).show()
-        }
         binding.logOUtButton.setOnClickListener {
             Toast.makeText(this,"Log Out is click ",Toast.LENGTH_SHORT).show()
         }
