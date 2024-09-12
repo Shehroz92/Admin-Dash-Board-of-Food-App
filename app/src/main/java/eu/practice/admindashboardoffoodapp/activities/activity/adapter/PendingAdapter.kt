@@ -2,6 +2,7 @@ package eu.practice.admindashboardoffoodapp.activities.activity.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.recyclerview.widget.RecyclerView
 import eu.practice.admindashboardoffoodapp.databinding.PendingOrderItemsBinding
 
@@ -31,7 +32,22 @@ class PendingAdapter( private val customerName:ArrayList<String>,private val foo
                 cartimage.setImageResource(foodImage[position])
 
                 dispatch.apply {
+                    if (!isAccepted){
+                        text ="Accept"
+                    }else{
+                        text ="Dispatch"
+                    }
+                        setOnClickListener {
+                            if (!isAccepted){
+                                text = "Dispatch"
+                                isAccepted = true
 
+                            }else{
+                                customerName.removeAt((adapterPosition))
+                                notifyItemRemoved(adapterPosition)
+                            }
+
+                        }
                 }
 
             }
