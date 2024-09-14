@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/email"
         android:layout_width="325sp"
         android:layout_height="57sp"
         android:background="@drawable/edittextshape"
@@ -91,7 +91,7 @@
         tools:layout_editor_absoluteY="437dp" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/password"
         android:layout_width="325sp"
         android:layout_height="57sp"
         android:layout_marginTop="24dp"
@@ -103,9 +103,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="5sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnogin"
@@ -119,7 +119,7 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
-       app:layout_constraintTop_toBottomOf="@id/editTextTextPassword2"
+       app:layout_constraintTop_toBottomOf="@id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
