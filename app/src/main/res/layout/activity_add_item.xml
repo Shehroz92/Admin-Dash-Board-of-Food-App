@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/foodName"
         android:layout_width="0sp"
         android:layout_height="57sp"
         android:hint="Enter Food Name"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
     <EditText
-        android:id="@+id/editTextPrice"
+        android:id="@+id/foodPrice"
         android:layout_width="0sp"
         android:layout_height="57sp"
         android:hint="Enter Food Price"
@@ -79,7 +79,7 @@
         android:inputType="text"
         android:fontFamily="@font/lato_regular"
         android:outlineSpotShadowColor="@color/text_colour"
-        app:layout_constraintTop_toBottomOf="@id/editTextName"
+        app:layout_constraintTop_toBottomOf="@id/foodName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -95,9 +95,9 @@
        android:paddingRight="15sp"
        android:layout_marginTop="24sp"
        android:background="@drawable/edittextshape"
-       app:layout_constraintTop_toBottomOf="@id/editTextPrice"
-       app:layout_constraintStart_toStartOf="@id/editTextPrice"
-       app:layout_constraintEnd_toEndOf="@id/editTextPrice"
+       app:layout_constraintTop_toBottomOf="@id/foodPrice"
+       app:layout_constraintStart_toStartOf="@id/foodPrice"
+       app:layout_constraintEnd_toEndOf="@id/foodPrice"
        android:drawableRight="@drawable/addimage"
 
        />
@@ -142,27 +142,26 @@
 
         />
     
-    <TextView
+    <EditText
         android:id="@+id/description"
-        android:layout_width="250sp"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua. Ut enim ad "
+        android:hint="Add Description here"
         android:textColor="@color/black"
+        android:textSize="18sp"
         android:fontFamily="@font/lato_regular"
         app:layout_constraintTop_toBottomOf="@id/shortDescription"
         app:layout_constraintStart_toStartOf="@id/shortDescription"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="@id/shortDescription"
         app:layout_constraintHorizontal_bias="0.0"
+
         />
 
     <TextView
         android:id="@+id/ingredientsName"
-        android:layout_width="250sp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="47sp"
         android:text="Ingredients"
         android:textColor="@color/black"
         android:fontFamily="@font/lato_regular"
@@ -170,7 +169,7 @@ ut labore et dolore magna aliqua. Ut enim ad "
         android:paddingLeft="15sp"
         app:layout_constraintTop_toBottomOf="@id/description"
         app:layout_constraintStart_toStartOf="@id/description"
-        android:background="@color/white"
+        android:background="@drawable/edittextshape"
         android:layout_margin="8sp"
         app:layout_constraintEnd_toEndOf="@id/description"
         app:layout_constraintHorizontal_bias="0.0"
@@ -181,12 +180,12 @@ ut labore et dolore magna aliqua. Ut enim ad "
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8sp"
-        android:text="Burger\nPizza\nCheeze"
+        android:hint="Add Ingredients"
         android:background="@color/white"
         android:fontFamily="@font/lato_regular"
         app:layout_constraintTop_toBottomOf="@id/ingredientsName"
-        app:layout_constraintStart_toStartOf="@id/ingredientsName"
-        app:layout_constraintEnd_toEndOf="@id/ingredientsName"
+        app:layout_constraintStart_toStartOf="@id/shortDescription"
+        app:layout_constraintEnd_toEndOf="@id/shortDescription"
         app:layout_constraintHorizontal_bias="0.0"
 
         />
@@ -194,7 +193,7 @@ ut labore et dolore magna aliqua. Ut enim ad "
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/AddItemButtton"
         android:layout_width="167dp"
-        android:layout_height="67dp"
+        android:layout_height="47dp"
         android:text="Add to Cart"
         android:background="@drawable/green_button"
         android:textColor="@color/white"

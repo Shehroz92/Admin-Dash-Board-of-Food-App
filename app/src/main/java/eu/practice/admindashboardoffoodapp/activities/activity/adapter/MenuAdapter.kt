@@ -1,22 +1,32 @@
 package eu.practice.admindashboardoffoodapp.activities.activity.adapter
 
 
+import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.database.DatabaseReference
+import eu.practice.admindashboardoffoodapp.activities.activity.models.AllMenu
 import eu.practice.admindashboardoffoodapp.databinding.AllItemsBinding
 
 
-class MenuAdapter (private val cartItems:MutableList<String> , private val cartItemPrice:MutableList<String> , private var cartImage: MutableList<Int>  ) : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
+class MenuAdapter(
+    private val context: Context,
+    private val menuList: ArrayList<AllMenu>,
+    databaseReference: DatabaseReference
+) :
+    RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
-    private val itemQuantities = IntArray(cartItems.size) { 1 }
+    private val itemQuantities = IntArray(menuList.size) { 1 }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         val binding = AllItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MenuViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
-        return cartItems.size
+        return menuList.size
     }
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
@@ -29,9 +39,12 @@ class MenuAdapter (private val cartItems:MutableList<String> , private val cartI
         fun bind(position: Int) {
             binding.apply {
                 val quantity = itemQuantities[position]
-                cartfoodname.text = cartItems[position]
-                cartItemprice.text = cartItemPrice[position]
-                cartimage.setImageResource(cartImage[position])
+                val menuItem =menuList[position]
+                val uriString = menuItem.foodImage
+                val uri = Uri.parse(uriString)
+                cartfoodname.text = menuItem.foodName
+                cartItemprice.text = menuItem.foodPrice
+                Glide.with(context).load(uri).into(cartimage)
                 cartItemQuantity.text = quantity.toString()
 
                 minus.setOnClickListener {
@@ -68,12 +81,13 @@ class MenuAdapter (private val cartItems:MutableList<String> , private val cartI
 
         private fun deleteQuantity(position: Int) {
 
-            cartItems.removeAt(position)
-            cartImage.removeAt(position)
-            cartItemPrice.removeAt(position)
+            menuList.removeAt(position)
+            menuList.removeAt(position)
+            menuList.removeAt(position)
             notifyItemRemoved(position)
-            notifyItemRangeChanged(position, cartItems.size)
+            notifyItemRangeChanged(position, menuList.size)
 
         }
     }
 }
+

@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
+import eu.practice.admindashboardoffoodapp.activities.activity.models.UserModel
 import eu.practice.admindashboardoffoodapp.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -36,8 +37,6 @@ class SignUpActivity : AppCompatActivity() {
         // initialize Fire Base Data Base
            dataBase = Firebase.database.reference
 
-
-
         binding.createButton.setOnClickListener {
 
             userName = binding.nameOfOwner.text.toString().trim()
@@ -57,7 +56,6 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
 
         val locationList = arrayOf("Karachi", "Lahore", "Multan")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locationList)
@@ -82,7 +80,7 @@ class SignUpActivity : AppCompatActivity() {
 
         }
     }
-
+// save data in to Data Base
     private fun saveUserData() {
 
         userName = binding.nameOfOwner.text.toString().trim()
@@ -90,6 +88,10 @@ class SignUpActivity : AppCompatActivity() {
         email = binding.email.text.toString().trim()
         password = binding.password.text.toString().trim()
 
+        val user = UserModel(userName,restaurantName,email,password)
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
+        // save user data  FireBase
+        dataBase.child("user").child(userId).setValue(user)
 
     }
 }
