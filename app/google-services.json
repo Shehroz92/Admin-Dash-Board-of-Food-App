@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "455476274319",
+    "project_id": "admin-food-app-ebafc",
+    "storage_bucket": "admin-food-app-ebafc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455476274319:android:76a0c3500aeab462ab3cfa",
+        "android_client_info": {
+          "package_name": "eu.practice.admindashboardoffoodapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQCgVWi8SATtuJ8PS6LK5JpATm6KkyjBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
