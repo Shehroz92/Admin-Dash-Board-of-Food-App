@@ -1,8 +1,8 @@
-**Admin Dashboard Food Ordering App**
+##Admin Dashboard Food Ordering App
 
 This Android application serves as an admin interface for managing food orders, user accounts, and menu items. Built with a single main activity featuring multiple CardViews, it allows admins to navigate through various functionalities like adding items, viewing the menu, managing users, and tracking orders. The app is designed using Kotlin and XML, with a user-friendly interface tailored for efficient food ordering management.
 
-### Features
+#### Features
 
 **Main Dashboard:**
 
