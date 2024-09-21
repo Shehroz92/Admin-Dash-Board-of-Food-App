@@ -31,11 +31,16 @@ This Android application serves as an admin interface for managing food orders, 
 ## Screenshots
 
 <p align="center">
-  <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0005.jpg" width="200" />
-  <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0006.jpg" width="200" />
-  <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0008.jpg" width="200" />
-  <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0009.jpg" width="200" />
-  <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0010.jpg" width="200" />
+    <img src="https://github.com/Shehroz92/Food-Ordering-App/blob/master/Splash%20scren.jpg" width="200" />
+    <img src="https://github.com/Shehroz92/Food-Ordering-App/blob/master/Sign%20Up.jpg" width="200" />
+    <img src="https://github.com/Shehroz92/Food-Ordering-App/blob/master/Log%20in.jpg" width="200" />
+    <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0010.jpg" width="200" />
+    <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0009.jpg" width="200" />
+    <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0005.jpg" width="200" />
+    <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0006.jpg" width="200" />
+    <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0008.jpg" width="200" />
+
+ 
   <img src="https://github.com/Shehroz92/Admin-Dash-Board-of-Food-App/blob/master/IMG-20240921-WA0011.jpg" width="200" />
  
 
