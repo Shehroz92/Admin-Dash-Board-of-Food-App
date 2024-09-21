@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import eu.practice.admindashboardoffoodapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -51,7 +52,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.logOUtButton.setOnClickListener {
-            Toast.makeText(this,"Log Out is click ",Toast.LENGTH_SHORT).show()
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

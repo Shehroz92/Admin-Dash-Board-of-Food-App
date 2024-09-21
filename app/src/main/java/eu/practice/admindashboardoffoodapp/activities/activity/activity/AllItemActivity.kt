@@ -43,11 +43,13 @@ class AllItemActivity : AppCompatActivity() {
     private fun retrieveMenuItem() {
         database = FirebaseDatabase.getInstance()
         val foodRef =database.reference.child("menu")
+
+
         // fetch data from data base
         foodRef.addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 // clear existing data before populating
-                menuItems.clear()
+                 menuItems.clear()
                 // loop for each through item
                 for (foodSnapShoot in snapshot.children){
                     val menuItem  = foodSnapShoot.getValue(AllMenu::class.java)
@@ -66,6 +68,7 @@ class AllItemActivity : AppCompatActivity() {
         })
 
     }
+
     private fun setAdapter() {
         val adapter = MenuAdapter(this@AllItemActivity,menuItems,databaseReference)
         binding.MenuRecyclerView.layoutManager = LinearLayoutManager(this)
