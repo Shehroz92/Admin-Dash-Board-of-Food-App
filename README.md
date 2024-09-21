@@ -1,10 +1,10 @@
-##Admin Dashboard Food Ordering App
+## Admin Dashboard Food Ordering App
 
 This Android application serves as an admin interface for managing food orders, user accounts, and menu items. Built with a single main activity featuring multiple CardViews, it allows admins to navigate through various functionalities like adding items, viewing the menu, managing users, and tracking orders. The app is designed using Kotlin and XML, with a user-friendly interface tailored for efficient food ordering management.
 
-#### Features
+## Features
 
-**Main Dashboard:**
+## Main Dashboard:
 
 - Displays multiple **CardViews** for navigation to different functionalities.
 - Includes cards for:
@@ -16,7 +16,7 @@ This Android application serves as an admin interface for managing food orders, 
   - **Log Out:** Securely log out of the admin dashboard.
   - **Order Summary Card:** Shows the number of pending orders, total orders, and their worth. Provides a quick overview of the business performance.
 
-**Order Management:**
+## Order Management:
 
 - **Pending Orders:** Displays a list of orders that are yet to be dispatched.
 - **Order Status:** On selecting the pending orders card, the admin can view detailed information about each order, including which are delivered and which are still pending.
