@@ -1,5 +1,6 @@
 package eu.practice.admindashboardoffoodapp.activities.activity.models
 
+
 data class AllMenu(
     val foodName:String?=null,
     val foodPrice:String?=null,

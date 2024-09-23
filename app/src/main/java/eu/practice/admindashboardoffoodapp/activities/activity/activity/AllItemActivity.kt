@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.Firebase
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -18,60 +20,65 @@ class AllItemActivity : AppCompatActivity() {
 
     private lateinit var databaseReference: DatabaseReference
     private lateinit var database: FirebaseDatabase
-    private  var menuItems:ArrayList<AllMenu> = ArrayList()
+    private var menuItems: ArrayList<AllMenu> = ArrayList()
 
-    private  val binding : ActivityAllItemBinding by lazy {
+    // Lazy initialization of the binding object
+    private val binding: ActivityAllItemBinding by lazy {
         ActivityAllItemBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        databaseReference = FirebaseDatabase.getInstance().reference
+
+        // Initialize Firebase database and reference
+        database = FirebaseDatabase.getInstance()
+        databaseReference = database.reference
+
+        // Retrieve and display menu items
+
         retrieveMenuItem()
 
         binding.backButton.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-        binding.root
-
     }
 
     private fun retrieveMenuItem() {
+
         database = FirebaseDatabase.getInstance()
-        val foodRef =database.reference.child("menu")
+        val foodRef:DatabaseReference = database.getReference("menu")
 
+        // Fetch data from Firebase
+        foodRef.addListenerForSingleValueEvent(object : ValueEventListener {
 
-        // fetch data from data base
-        foodRef.addListenerForSingleValueEvent(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                // clear existing data before populating
+                // Clear existing data before populating
                  menuItems.clear()
-                // loop for each through item
-                for (foodSnapShoot in snapshot.children){
-                    val menuItem  = foodSnapShoot.getValue(AllMenu::class.java)
+
+                // Loop through each item and add to the list
+                Log.d("DatabaseSnapshot", "Children count: ${snapshot.childrenCount}")
+                for (foodSnapshot :DataSnapshot? in snapshot.children) {
+                    val menuItem : AllMenu? = foodSnapshot?.getValue(AllMenu::class.java)
+                    Log.d("DatabaseItem", "Menu Item: ${foodSnapshot?.key} -> $menuItem")
                     menuItem?.let {
                         menuItems.add(it)
-                    }
+                    } ?: Log.d("DatabaseError", "Failed to parse item: ${foodSnapshot?.key}")
                 }
-                setAdapter()
+                    setAdapter()
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.d("DatabaseError","Error: ${error.message}")
+                Log.d("DatabaseError", "Error: ${error.message}")
             }
-
-
         })
-
     }
 
     private fun setAdapter() {
-        val adapter = MenuAdapter(this@AllItemActivity,menuItems,databaseReference)
+        val adapter = MenuAdapter(this@AllItemActivity, menuItems, databaseReference)
         binding.MenuRecyclerView.layoutManager = LinearLayoutManager(this)
-        binding.MenuRecyclerView.adapter=adapter
+        binding.MenuRecyclerView.adapter = adapter
+
     }
 }

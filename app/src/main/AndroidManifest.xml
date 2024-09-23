@@ -31,7 +31,13 @@
             android:exported="true" />
         <activity
             android:name=".activities.activity.activity.AllItemActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.activity.activity.AddItemActivity"
             android:exported="false" />
@@ -44,11 +50,7 @@
         <activity
             android:name=".activities.activity.activity.SplashActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.activity.activity.MainActivity"
