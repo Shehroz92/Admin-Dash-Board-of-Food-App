@@ -1,5 +1,6 @@
 package eu.practice.admindashboardoffoodapp.activities.activity.activity
 
+import android.R
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -58,7 +59,7 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         val locationList = arrayOf("Karachi", "Lahore", "Multan")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locationList)
+        val adapter = ArrayAdapter(this, R.layout.simple_list_item_1, locationList)
         val autoCompleteTextView = binding.listofLocation
         autoCompleteTextView.setAdapter(adapter)
     }
