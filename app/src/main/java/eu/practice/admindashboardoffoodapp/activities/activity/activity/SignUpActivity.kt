@@ -1,6 +1,6 @@
 package eu.practice.admindashboardoffoodapp.activities.activity.activity
 
-import android.R
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import android.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
 import eu.practice.admindashboardoffoodapp.activities.activity.models.UserModel
