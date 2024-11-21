@@ -3,7 +3,6 @@ package eu.practice.admindashboardoffoodapp.activities.activity.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.service.autofill.UserData
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -113,14 +112,21 @@ class AdminProfileActivity : AppCompatActivity() {
         val updatePassword = binding.Phone.text.toString()
         val updatePhone = binding.Email.text.toString()
         val updateAddress = binding.Address.text.toString()
-        val userData = UserModel(updateName,updateEmail,updatePassword,updatePhone,updateAddress)
-        adminReference.setValue(userData).addOnCompleteListener {
+        val currentUserUid = auth.currentUser?.uid
+        if (currentUserUid != null) {
+            val userReference = adminReference.child(currentUserUid)
+            userReference.child("name").setValue(updateName)
+            userReference.child("email").setValue(updateEmail)
+            userReference.child("phone").setValue(updatePhone)
+            userReference.child("password").setValue(updatePassword)
+            userReference.child("address").setValue(updateAddress)
+
             Toast.makeText(this, "Profile Updated Successfully", Toast.LENGTH_SHORT).show()
             auth.currentUser?.updateEmail(updateEmail)
             auth.currentUser?.updatePassword(updatePassword)
-        }.addOnFailureListener {
+
+        }else {
             Toast.makeText(this, "Profile Updated fail", Toast.LENGTH_SHORT).show()
         }
-
     }
 }
