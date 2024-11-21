@@ -1,5 +1,6 @@
 package eu.practice.admindashboardoffoodapp.activities.activity.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +24,8 @@ class OutForDeliveryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.backButton.setOnClickListener {
+            val intent = Intent(this@OutForDeliveryActivity , MainActivity::class.java)
+            startActivity(intent)
             finish()
         }
         retrieveCompleteOrderDetails()
