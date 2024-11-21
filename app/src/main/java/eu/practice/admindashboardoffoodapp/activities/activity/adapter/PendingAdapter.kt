@@ -1,13 +1,29 @@
 package eu.practice.admindashboardoffoodapp.activities.activity.adapter
 
+
+
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import eu.practice.admindashboardoffoodapp.databinding.PendingOrderItemsBinding
 
-class PendingAdapter( private val customerName:ArrayList<String>,private val foodQuantity:ArrayList<String>,private val foodImage:ArrayList<Int> ) : RecyclerView.Adapter<PendingAdapter.PendingOrderViewHolder>(){
+class PendingAdapter(
+    private val context: Context,
+    private val customerName: MutableList<String>,
+    private val foodQuantity: MutableList<String>,
+    private val foodImage: MutableList<String>,
+    private val itemClick: onItemClicked
+    ) : RecyclerView.Adapter<PendingAdapter.PendingOrderViewHolder>(){
+interface onItemClicked {
+    fun onItemClickedListener(position: Int)
+    fun onItemAcceptClickedListener(position: Int)
+    fun onItemDispatchClickedListener(position: Int)
 
+
+
+}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingOrderViewHolder {
         val binding = PendingOrderItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -29,7 +45,9 @@ class PendingAdapter( private val customerName:ArrayList<String>,private val foo
             binding.apply {
                 cartfoodname.text = customerName[position]
                 quantity.text= foodQuantity[position]
-                cartimage.setImageResource(foodImage[position])
+                val uriString  = (foodImage[position])
+                Glide.with(context).load(uriString).into(cartimage)
+
 
                 dispatch.apply {
                     if (!isAccepted){
@@ -41,15 +59,18 @@ class PendingAdapter( private val customerName:ArrayList<String>,private val foo
                             if (!isAccepted){
                                 text = "Dispatch"
                                 isAccepted = true
+                                itemClick.onItemAcceptClickedListener(position)
 
                             }else{
                                 customerName.removeAt((adapterPosition))
                                 notifyItemRemoved(adapterPosition)
+                                itemClick.onItemDispatchClickedListener(position)
                             }
-
                         }
+                        itemView.setOnClickListener {
+                        itemClick.onItemClickedListener(position)
+                    }
                 }
-
             }
         }
     }

@@ -89,6 +89,7 @@ class AddItemActivity : AppCompatActivity() {
 
                     // Create the new menu item with the image URL
                     val newItem = AllMenu(
+                        newItemKey,
                         foodName = foodName,
                         foodPrice = foodPrice,
                         foodDescription = foodDescription,

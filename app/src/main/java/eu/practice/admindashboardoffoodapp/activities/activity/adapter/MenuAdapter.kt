@@ -14,7 +14,8 @@ import eu.practice.admindashboardoffoodapp.databinding.AllItemsBinding
 class MenuAdapter(
     private val context: Context,
     private val menuList: ArrayList<AllMenu>,
-    databaseReference: DatabaseReference
+    databaseReference: DatabaseReference,
+    private val onDeleteClicked : ( position:Int) -> Unit
 ) : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
     private val itemQuantities = IntArray(menuList.size) { 1 }
@@ -45,7 +46,6 @@ class MenuAdapter(
 
                     cartfoodname.text = menuItem.foodName
                     cartItemprice.text = menuItem.foodPrice
-                    description.text = menuItem.foodDescription
                     Glide.with(context).load(uri).into(cartimage)
                     cartItemQuantity.text = quantity.toString()
                 } catch (e: Exception) {
@@ -59,10 +59,8 @@ class MenuAdapter(
                     increaseQuantity(position)
                 }
                 delete.setOnClickListener {
-                    val itemPosition = adapterPosition
-                    if (itemPosition != RecyclerView.NO_POSITION) {
-                        deleteQuantity(itemPosition)
-                    }
+                    onDeleteClicked(position)
+
                 }
             }
         }
@@ -79,12 +77,6 @@ class MenuAdapter(
                 itemQuantities[position]++
                 binding.cartItemQuantity.text = itemQuantities[position].toString()
             }
-        }
-
-        private fun deleteQuantity(position: Int) {
-            menuList.removeAt(position)
-            notifyItemRemoved(position)
-            notifyItemRangeChanged(position, menuList.size)
         }
     }
 }
